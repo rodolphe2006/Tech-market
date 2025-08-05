@@ -1,4 +1,4 @@
-nav {
+.nav {
   width: 100%;
   display: flex;
   align-items: center;
@@ -8,10 +8,38 @@ nav {
   left: 0%;
   background-color: var(--brand-color);
   min-height: 7%;
+  transform: translateY(0%);
+  transition: all 0.5s linear;
+}
+.nav_off {
+  transform: translateY(100%);
+  transition: all 0.5s linear;
 }
 .link {
   color: whitesmoke;
   font-family: var(--font-family);
   font-weight: 900;
   font-style: normal;
+}
+button {
+  border: none;
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+}
+.sun,
+.moon {
+  transform: translateY(0%);
+  color: whitesmoke;
+  transition: all 0.5s ease;
+}
+
+.moon_off,
+.sun_off {
+  top: 0;
+  left: 0;
+  position: absolute;
+  transform: translateY(100%);
+  color: transparent;
+  transition: all 0.5s ease;
 }

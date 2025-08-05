@@ -1,0 +1,10 @@
+.home {
+  overflow-y: scroll;
+  max-width: 100%;
+  height: auto;
+}
+.nav_home {
+  display: flex;
+  align-items: space-around;
+  justify-content: center;
+}
