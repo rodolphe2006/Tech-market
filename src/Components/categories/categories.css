@@ -1,0 +1,30 @@
+.selection {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  min-height: 50%;
+  gap: 0.5rem;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+}
+.selection::-webkit-scrollbar {
+  display: none;
+}
+
+.choice {
+  min-width: 70px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: transparent;
+  border: 2px solid whitesmoke;
+  color: white;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-style: var(--font-style);
+}
+.choice_active {
+  background-color: white;
+  color: var(--brand-color);
+  transition: all 0.3s;
+}

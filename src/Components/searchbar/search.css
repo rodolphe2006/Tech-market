@@ -1,0 +1,24 @@
+.search_categories {
+  all: unset;
+  box-sizing: border-box;
+  background-color: Whitesmoke;
+  min-width: 80%;
+  padding: 4px;
+  border-radius: 10px;
+}
+.search_categories:focus {
+  border: 1px solid gray;
+}
+.search_section {
+  max-height: 40%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  min-width: 100%;
+  font-family: var(--font-family);
+  padding: 1px 5px;
+}
+.faSearch {
+  color: whitesmoke;
+}

@@ -14,12 +14,16 @@ function Bottomnav() {
   const [theme, setTheme] = useState("light");
 
   const [visibleBar, setVisibleBar] = useState(true);
+  const [active, setActive] = useState("home");
 
   const handleThemeChange = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
 
     document.documentElement.setAttribute("data-theme", newTheme);
+  };
+  const handleActiveness = (current: string) => {
+    setActive(current);
   };
 
   useEffect(() => {
@@ -43,14 +47,28 @@ function Bottomnav() {
 
   return (
     <nav className={visibleBar ? "nav" : "nav_off"}>
-      <Link to="/" className="link">
+      <Link
+        to="/"
+        className={`link  ${active === "home" && "link_active"}`}
+        onClick={() => handleActiveness("home")}
+      >
         <FontAwesomeIcon icon={faHome} /> Home
       </Link>
-      <Link to="added" className="link">
-        <FontAwesomeIcon icon={faBagShopping} />
+      <Link
+        to="added"
+        className={`link  ${active === "added" && "link_active"}`}
+      >
+        <FontAwesomeIcon
+          icon={faBagShopping}
+          onClick={() => handleActiveness("added")}
+        />
         Added
       </Link>
-      <Link to="about" className="link">
+      <Link
+        to="about"
+        className={`link  ${active === "about" && "link_active"}`}
+        onClick={() => handleActiveness("about")}
+      >
         <FontAwesomeIcon icon={faBook} />
         About
       </Link>
