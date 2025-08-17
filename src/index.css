@@ -16,14 +16,13 @@
   --color-border: gray;
   --color-title: rgb(92, 92, 92);
   /*____________*/
-  
 
   --font-family: "Space Grotesk", sans-serif;
   --font-optical-sizing: auto;
- 
+
   --font-style: normal;
 }
-}
+
 [data-theme="dark"] {
   --bg-color: rgb(29, 23, 23);
   --color-title: white;
