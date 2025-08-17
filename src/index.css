@@ -8,15 +8,21 @@
 
 :root {
   /*brand color*/
-  --brand-color: rgb(7, 158, 196);
+  --the_green: rgb(6, 196, 6);
+  --Writtings: rgb(4, 119, 4);
+  --brand-color: black;
   /*____________*/
-  --bg-color: whitesmoke;
+  --bg-color: #d9d9d9;
   --color-border: gray;
   --color-title: rgb(92, 92, 92);
+  /*____________*/
+  
 
-  --font-family: "Abel", sans-serif;
-  --font-weight: 400;
+  --font-family: "Space Grotesk", sans-serif;
+  --font-optical-sizing: auto;
+ 
   --font-style: normal;
+}
 }
 [data-theme="dark"] {
   --bg-color: rgb(29, 23, 23);

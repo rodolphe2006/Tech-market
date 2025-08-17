@@ -14,9 +14,10 @@
 .nav_off {
   transform: translateY(100%);
   transition: all 0.5s linear;
+  opacity: 0;
 }
 .link {
-  color: whitesmoke;
+  color: var(--Writtings);
   font-family: var(--font-family);
   font-weight: 900;
   font-style: normal;
@@ -30,7 +31,7 @@ button {
 .sun,
 .moon {
   transform: translateY(0%);
-  color: whitesmoke;
+  color: var(--the_green);
   transition: all 0.5s ease;
 }
 
@@ -44,6 +45,10 @@ button {
   transition: all 0.5s ease;
 }
 .link_active {
-  border-bottom: 2px solid whitesmoke;
-  transition: all 0.5s linear;
+  scale: 0.8;
+  background-color: var(--the_green);
+  padding: 5px;
+  color: black;
+  border-radius: 10px;
+  transition: all 0.5s;
 }

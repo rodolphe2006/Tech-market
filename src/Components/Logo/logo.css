@@ -1,0 +1,23 @@
+.logo {
+  min-height: 60px;
+  min-width: 60px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(6, 196, 6);
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgba(6, 196, 6, 0.836);
+}
+.logo h1 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+  color: black;
+  text-shadow: 0px 0px 20px rgb(6, 196, 6);
+}
+.my_logo {
+  color: rgb(6, 196, 6);
+}

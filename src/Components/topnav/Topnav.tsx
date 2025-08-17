@@ -1,15 +1,13 @@
 import "./topnav.css";
-import Search from "../searchbar/Search";
-import Categories from "../categories/Categories";
+
+import Logo from "../Logo/Logo";
+import Research from "../searchbar/Search";
 
 function Topnav() {
   return (
     <nav className="navtop">
-      <div className="Logo">
-        <h1>Tech-Market</h1>
-      </div>
-      <Search />
-      <Categories />
+      <Logo />
+      <Research />
     </nav>
   );
 }

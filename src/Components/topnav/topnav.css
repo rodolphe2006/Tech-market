@@ -1,15 +1,15 @@
 .navtop {
   max-width: 100%;
   min-width: 100%;
-  height: 20%;
-  background-color: var(--brand-color);
+  height: 12%;
+  background-color: black;
   padding: 5px;
   position: fixed;
 
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
 }
 .Logo {
   max-height: 10%;

@@ -1,0 +1,91 @@
+.welcome {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(20, 20, 20);
+  z-index: 100;
+  overflow: hidden;
+}
+
+.welcome_slide {
+  transform: translateX(100%);
+  transition: all 0.4s linear;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(20, 20, 20);
+  z-index: 100;
+  overflow: hidden;
+}
+.welcome h1 {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 2rem;
+  color: black;
+  text-shadow: 0px 0px 4px rgb(6, 196, 6);
+  transform: translateY(160%);
+
+  animation: appears 2s forwards;
+}
+.welcome span {
+  font-size: 2.5rem;
+  position: relative;
+  margin-right: 0.8rem;
+  margin-left: 1rem;
+  color: black;
+
+  animation: appears 2s forwards;
+}
+.welcome span::after {
+  content: "";
+
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: transparent;
+  position: absolute;
+
+  min-width: 50px;
+  min-height: 50px;
+
+  z-index: -1;
+  border: 1px solid rgb(6, 196, 6);
+}
+.myCart {
+  color: rgb(6, 196, 6);
+  size: 3rem;
+  transform: translateY(160%);
+  animation: appears 2s forwards;
+}
+.square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  min-height: 100px;
+  overflow: hidden;
+}
+/*++++++++++++++++++++++Animations++++++++++++++++++++++*/
+
+@keyframes appears {
+  from {
+    transform: translateY(160%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}

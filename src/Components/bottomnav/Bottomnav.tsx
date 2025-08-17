@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Home, ShoppingBag, Book, Sun, Moon } from "lucide-react";
 
 import { useState, useEffect } from "react";
 import "./bottom.css";
@@ -52,16 +53,13 @@ function Bottomnav() {
         className={`link  ${active === "home" && "link_active"}`}
         onClick={() => handleActiveness("home")}
       >
-        <FontAwesomeIcon icon={faHome} /> Home
+        <Home /> Home
       </Link>
       <Link
         to="added"
         className={`link  ${active === "added" && "link_active"}`}
       >
-        <FontAwesomeIcon
-          icon={faBagShopping}
-          onClick={() => handleActiveness("added")}
-        />
+        <ShoppingBag onClick={() => handleActiveness("added")} />
         Added
       </Link>
       <Link
@@ -69,18 +67,12 @@ function Bottomnav() {
         className={`link  ${active === "about" && "link_active"}`}
         onClick={() => handleActiveness("about")}
       >
-        <FontAwesomeIcon icon={faBook} />
+        <Book />
         About
       </Link>
       <button onClick={handleThemeChange} className="switch">
-        <FontAwesomeIcon
-          icon={faSun}
-          className={theme === "light" ? "sun" : "sun_off"}
-        />
-        <FontAwesomeIcon
-          icon={faMoon}
-          className={theme === "dark" ? "moon" : "moon_off"}
-        />
+        <Sun className={theme === "light" ? "sun" : "sun_off"} />
+        <Moon className={theme === "dark" ? "moon" : "moon_off"} />
       </button>
     </nav>
   );

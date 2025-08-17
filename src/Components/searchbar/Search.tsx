@@ -1,23 +1,16 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { Search } from "lucide-react";
 
 import "./search.css";
-function Search() {
+function Research() {
   return (
     <>
       <div className="search_section">
-        <label htmlFor="search">
-          <FontAwesomeIcon icon={faSearch} className="faSearch" />
-        </label>
-        <input
-          id="search"
-          type="search"
-          placeholder="Search..."
-          className="search_categories"
-        />
+        <Search className="lens" size={25} />
+
+        <input id="search" type="text" placeholder="Search..." />
       </div>
     </>
   );
 }
 
-export default Search;
+export default Research;

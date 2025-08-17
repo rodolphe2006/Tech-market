@@ -1,17 +1,27 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./categories.css";
-function Categories() {
-  const [categories, setCategories] = useState([]);
-  const [active, setActive] = useState("all");
 
+type Category = {
+  name: string;
+};
+
+function Categories() {
+  const [categories, setCategories] = useState<Category[]>([]);
+  const [active, setActive] = useState("all");
   const handleActiveness = (current: string) => {
     setActive(current);
   };
-  axios
-    .get("https://fakestoreapi.in/api/products/category")
-    .then((resp) => setCategories(resp.data.categories))
-    .catch((error) => console.log(error));
+
+  useEffect(() => {
+    axios
+      .get("https://api.escuelajs.co/api/v1/categories")
+      .then((resp) => {
+        setCategories(resp.data);
+        console.log(resp.data);
+      })
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <div className="selection">
       <button
@@ -20,13 +30,13 @@ function Categories() {
       >
         all
       </button>
-      {categories.map((item, index) => (
+      {categories.slice(0, 3).map((item, index) => (
         <button
           key={index}
-          className={`choice  ${active === item && "choice_active"}`}
-          onClick={() => handleActiveness(item)}
+          className={`choice  ${active === item.name && "choice_active"}`}
+          onClick={() => handleActiveness(item.name)}
         >
-          {item}
+          {item.name}
         </button>
       ))}
     </div>

@@ -1,7 +1,7 @@
 .home {
-  overflow-y: scroll;
+  overflow-y: hidden;
   max-width: 100%;
-  height: auto;
+  height: 100vh;
 }
 .nav_home {
   display: flex;
