@@ -3,14 +3,7 @@ import { Home, ShoppingBag, Book, Sun, Moon } from "lucide-react";
 
 import { useState, useEffect } from "react";
 import "./bottom.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faHome,
-  faBagShopping,
-  faSun,
-  faMoon,
-  faBook,
-} from "@fortawesome/free-solid-svg-icons";
+
 function Bottomnav() {
   const [theme, setTheme] = useState("light");
 

@@ -1,5 +1,5 @@
 import "./welcome.css";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { ShoppingCart } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";

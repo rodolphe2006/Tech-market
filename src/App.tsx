@@ -8,7 +8,7 @@ import Layout from "./Components/Layout";
 import Home from "./Pages/home/Home";
 import About from "./Pages/about/About";
 import Added from "./Pages/added/Added";
-import Welcome from "./Pages/welcome/welcome";
+import Welcome from "./Pages/welcome/Welcome";
 import { AnimatePresence } from "framer-motion";
 import "./Components/bottomnav/bottom.css";
 
