@@ -2,6 +2,7 @@
   height: 100dvh;
   min-width: 100%;
   overflow: hidden;
+  position: relative;
 }
 .welcome nav {
   display: flex;
@@ -16,7 +17,11 @@
 
 .herosection {
   width: 100%;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0.5)
+  );
   height: 100%;
   padding-top: 5rem;
 }
@@ -26,7 +31,7 @@
 
   font-weight: 600;
   font-family: var(--font-title);
-  color: var(--background-color);
+  color: white;
 }
 .herosection span {
   font-family: var(--brand-font);
@@ -69,40 +74,9 @@
   transition: box-shadow 0.3s ease;
   cursor: pointer;
 }
-.entrance_img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
 
-  z-index: -1;
-  background-image: url("../../assets/background_welcome.webp");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.entrance_img div {
-  width: 60%;
-  height: 50vh;
-  background-color: bisque;
-  position: absolute;
-
-  overflow: hidden;
-
-  border-radius: 10px;
-}
-
-.image1 {
-  top: 15%;
-  left: 5%;
-}
-.image2 {
-  top: 28%;
-  right: 3%;
-}
-.image3 {
-  bottom: 3%;
-  left: 20%;
-  background-color: rgba(255, 255, 255, 0.2);
+@media screen and (min-width: 767px) {
+  .welcome {
+    display: none;
+  }
 }
