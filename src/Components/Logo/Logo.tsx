@@ -1,9 +1,9 @@
-import { ShoppingCart } from "lucide-react";
 import "./logo.css";
+
 function Logo() {
   return (
-    <div className="logo">
-      <ShoppingCart className="my_logo" /> <h1>N</h1>
+    <div className="logo-container">
+      <h1 className="logo">NZ</h1>
     </div>
   );
 }

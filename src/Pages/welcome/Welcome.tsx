@@ -1,37 +1,33 @@
+import Logo from "../../Components/Logo/Logo";
 import "./welcome.css";
-import { useEffect } from "react";
-import { ShoppingCart } from "lucide-react";
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import "../../Components/menu_btn/Menu_btn";
+import Menu_btn from "../../Components/menu_btn/Menu_btn";
 
 function Welcome() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const delay = setTimeout(() => {
-      navigate("/home");
-    }, 4500);
-    return () => {
-      clearTimeout(delay);
-    };
-  }, []);
   return (
-    <motion.div
-      initial={{ x: 0 }}
-      animate={{ x: "0%" }}
-      exit={{ x: "100%" }}
-      transition={{ duration: 0.5 }}
-    >
-      <section className="welcome">
-        <div className="square">
-          <ShoppingCart className="myCart" size={60} />
-          <h1>
-            <span>N</span>ovastore
-          </h1>
-        </div>
+    <section className="welcome">
+      <nav>
+        <Logo />
+        <Menu_btn />
+      </nav>
+      <section className="herosection">
+        <h1>
+          Welcome to <span>NovaZone</span>
+        </h1>
+        <p>
+          Step Into <span> NovaZone</span>, Your Gateway to the Hottest Games,
+          Exclusive Updates!
+        </p>
       </section>
-    </motion.div>
+
+      <button className="get_started_btn">Start</button>
+
+      <section className="entrance_img">
+        <div className="image1"></div>
+        <div className="image2"></div>
+        <div className="image3"></div>
+      </section>
+    </section>
   );
 }
-
 export default Welcome;
