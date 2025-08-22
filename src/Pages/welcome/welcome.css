@@ -1,5 +1,5 @@
 .welcome {
-  height: 100vh;
+  height: 100dvh;
   min-width: 100%;
   overflow: hidden;
 }
@@ -16,11 +16,7 @@
 
 .herosection {
   width: 100%;
-  background-image: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.8),
-    rgba(0, 0, 0, 0)
-  );
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
   height: 100%;
   padding-top: 5rem;
 }
