@@ -9,54 +9,51 @@ import img7 from "../../assets/img14.webp";
 import img8 from "../../assets/img15.webp";
 import { gsap } from "gsap";
 import { useRef, useEffect, useState } from "react";
+import { style } from "framer-motion/client";
 
 function Carousel() {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8];
-  const imgref = useRef<Array<HTMLDivElement | null>>([]);
-  const bgref = useRef<HTMLDivElement>(null);
-  const [currentslide, setcurrentslide] = useState(0);
+  const bgref = useRef<HTMLDivElement | null>(null);
+  const imagesref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setcurrentslide((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-  useEffect(() => {
-    gsap.to(imgref.current[currentslide], {
-      xPercent: -50,
-      left: "50%",
-    });
     gsap.fromTo(
       bgref.current,
-      { autoAlpha: 0 },
+      {
+        autoAlpha: 0,
+      },
       {
         autoAlpha: 1,
         duration: 1,
         onStart: () => {
           if (bgref.current) {
-            bgref.current.style.backgroundImage = `url(${images[currentslide]})`;
+            bgref.current.style.backgroundImage = `url(${images[1]})`;
           }
         },
       }
     );
-  }, [currentslide]);
+  }, []);
+
   return (
     <section className="carousel">
       <div className="background" ref={bgref}></div>
 
-      <div className="slider">
-        {images.map((img, index) => (
-          <div
-            className="slide"
-            key={index}
-            ref={(el) => {
-              imgref.current[index] = el;
-            }}
-          >
-            <img src={img} alt={img} />
-          </div>
-        ))}
+      <div className="carousel_container">
+        <div
+          className="slider"
+          style={{ "--quantity": images.length } as React.CSSProperties}
+        >
+          {images.map((src, index) => (
+            <div
+              key={index}
+              className="my_images"
+              style={{ "--position": index + 1 } as React.CSSProperties}
+              ref={imagesref}
+            >
+              <img src={src} alt={src} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
