@@ -8,8 +8,7 @@ import img6 from "../../assets/img11.webp";
 import img7 from "../../assets/img14.webp";
 import img8 from "../../assets/img15.webp";
 import { gsap } from "gsap";
-import { useRef, useEffect, useState } from "react";
-import { style } from "framer-motion/client";
+import { useRef, useEffect } from "react";
 
 function Carousel() {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8];
