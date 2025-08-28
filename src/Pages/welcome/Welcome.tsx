@@ -4,7 +4,7 @@ import "../../Components/menu_btn/Menu_btn";
 import Menu_btn from "../../Components/menu_btn/Menu_btn";
 import Carousel from "../../Components/caroussel/Carousel";
 import gsap from "gsap";
-import SideBar from "../../Components/side_bar/SideBar";
+
 import { useEffect, useRef } from "react";
 function Welcome() {
   const h1Ref = useRef<HTMLHeadingElement | null>(null);
@@ -54,6 +54,7 @@ function Welcome() {
         <nav>
           <Logo />
           <Menu_btn />
+          <></>
         </nav>
         <section className="herosection">
           <h1 ref={h1Ref}>
