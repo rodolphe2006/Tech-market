@@ -12,42 +12,45 @@ import { useRef, useEffect } from "react";
 
 function Carousel() {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8];
-  const bgref = useRef<HTMLDivElement | null>(null);
-  const imagesref = useRef<HTMLDivElement | null>(null);
+  const sliderRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
+  /*======================Gsap animation=======================*/
   useEffect(() => {
-    gsap.fromTo(
-      bgref.current,
+    const tl = gsap.timeline();
+    tl.fromTo(
+      containerRef.current,
       {
-        autoAlpha: 0,
+        yPercent: -100,
+        opacity: 0,
       },
       {
-        autoAlpha: 1,
-        duration: 1,
-        onStart: () => {
-          if (bgref.current) {
-            bgref.current.style.backgroundImage = `url(${images[1]})`;
-          }
-        },
+        yPercent: 15,
+        opacity: 1,
+        duration: 2,
+        ease: "elastic.out(1, 0.3)",
       }
-    );
+    ).to(sliderRef.current, {
+      rotateY: 360,
+      duration: 30,
+      repeat: -1,
+      yoyo: true,
+    });
   }, []);
 
   return (
     <section className="carousel">
-      <div className="background" ref={bgref}></div>
-
-      <div className="carousel_container">
+      <div className="carousel_container" ref={containerRef}>
         <div
           className="slider"
           style={{ "--quantity": images.length } as React.CSSProperties}
+          ref={sliderRef}
         >
           {images.map((src, index) => (
             <div
               key={index}
               className="my_images"
               style={{ "--position": index + 1 } as React.CSSProperties}
-              ref={imagesref}
             >
               <img src={src} alt={src} />
             </div>
